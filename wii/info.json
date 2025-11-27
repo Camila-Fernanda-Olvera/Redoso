@@ -1,0 +1,6 @@
+{
+  "relatedTo": "login/social",
+  "purpose": "placeholder assets for non-destructive commits",
+  "createdBy": "automation-script",
+  "notes": "Estos archivos no deben incluirse en builds ni afectar al código."
+}

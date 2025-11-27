@@ -54,5 +54,31 @@ class User
         }
         return false;
     }
+
+    // Get user by ID
+    public function getUserById($user_id)
+    {
+        $query = "SELECT id, nombre, correo, foto_perfil, foto_portada, fecha_registro FROM " . $this->table_name . " WHERE id = :id LIMIT 1";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(":id", $user_id);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        return null;
+    }
+
+    // Get user stats (friends count, posts count)
+    public function getUserStats($user_id)
+    {
+        // For now, return mock data
+        // TODO: Implement actual queries when posts and friends tables are created
+        return array(
+            "friends_count" => 0,
+            "posts_count" => 0
+        );
+    }
 }
 ?>

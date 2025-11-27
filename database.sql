@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS red_social_quorum;
-USE red_social_quorum;
-
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,

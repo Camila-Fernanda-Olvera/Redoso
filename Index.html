@@ -144,10 +144,12 @@
                     btn.classList.remove('from-blue-600', 'via-purple-600', 'to-pink-600');
                     btn.classList.add('bg-green-500');
                     
+                    // Store user info in sessionStorage for profile page
+                    sessionStorage.setItem('user', JSON.stringify(result.user));
+                    
                     setTimeout(() => {
-                        // Redirect to home/feed (to be implemented)
-                        alert('Bienvenido ' + result.user.nombre);
-                        // window.location.href = 'feed.php'; 
+                        // Redirect to profile page
+                        window.location.href = 'profile.html'; 
                     }, 1000);
                 } else {
                     // Login failed
